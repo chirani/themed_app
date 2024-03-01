@@ -1,4 +1,8 @@
-import { Text as RNText, TextProps as RNTextProps, TextStyle } from 'react-native';
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  TextStyle,
+} from 'react-native';
 import React from 'react';
 
 interface CustomTextProps extends RNTextProps {
@@ -30,7 +34,9 @@ const Text: React.FC = (props: CustomTextProps) => {
   }
 
   return (
-    <RNText style={[props.style, { fontSize, fontWeight }]} {...props}>
+    <RNText
+      {...props}
+      style={[props.style, { fontSize, fontWeight }, props.style]}>
       {props.children}
     </RNText>
   );
