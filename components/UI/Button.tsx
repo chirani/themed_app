@@ -19,7 +19,7 @@ interface ButtonProps extends PressableProps {
   type?: 'regular' | 'outline' | 'transparent';
 }
 
-const Button = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const isPressed = useSharedValue(false);
   const scale = useSharedValue(1);
 

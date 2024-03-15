@@ -8,7 +8,7 @@ import React from 'react';
 interface CustomTextProps extends RNTextProps {
   size?: 'h1' | 'h2' | 'h3' | 'normal' | 'small';
 }
-const Text: React.FC = (props: CustomTextProps) => {
+const Text: React.FC<CustomTextProps> = (props) => {
   let fontSize: number = 16; // Default font size
   let fontWeight: TextStyle['fontWeight'] = 'normal'; // Default font weight
 
