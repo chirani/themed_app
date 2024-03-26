@@ -4,39 +4,37 @@ import {
   TextStyle,
 } from 'react-native';
 import React from 'react';
-
+import { fontSizes } from './Colors';
 interface CustomTextProps extends RNTextProps {
   size?: 'h1' | 'h2' | 'h3' | 'normal' | 'small';
 }
 const Text: React.FC<CustomTextProps> = (props) => {
-  let fontSize: number = 16; // Default font size
+  let fontSize;
   let fontWeight: TextStyle['fontWeight'] = 'normal'; // Default font weight
 
   switch (props.size) {
     case 'small':
-      fontSize = 12;
+      fontSize = fontSizes.small;
       fontWeight = 'normal';
     case 'h1':
-      fontSize = 32;
+      fontSize = fontSizes.h1;
       fontWeight = 'bold';
       break;
     case 'h2':
-      fontSize = 24;
+      fontSize = fontSizes.h2;
       fontWeight = 'bold';
       break;
     case 'h3':
-      fontSize = 20;
+      fontSize = fontSizes.h3;
       fontWeight = 'bold';
       break;
     default:
-      fontSize = 16;
+      fontSize = fontSizes.regular;
       fontWeight = 'normal';
   }
 
   return (
-    <RNText
-      {...props}
-      style={[props.style, { fontSize, fontWeight }, props.style]}>
+    <RNText {...props} style={[{ fontSize, fontWeight }, props.style]}>
       {props.children}
     </RNText>
   );

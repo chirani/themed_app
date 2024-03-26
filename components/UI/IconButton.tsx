@@ -11,7 +11,6 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import { fontSizes } from './Colors';
 
 interface ButtonProps extends PressableProps {
   title: string;
@@ -127,9 +126,9 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 6,
     alignItems: 'center',
-    backgroundColor: '#ec2D01',
+    backgroundColor: 'black',
     borderWidth: 2,
-    borderColor: '#ec2D01',
+    borderColor: 'black',
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
@@ -151,7 +150,7 @@ const styles = StyleSheet.create({
 
 const textStyles = StyleSheet.create({
   buttonText: {
-    fontSize: fontSizes.regular,
+    fontSize: 16,
     fontWeight: '500',
     color: 'white',
   },
@@ -178,9 +177,9 @@ const buttonTypeStyles = StyleSheet.create({
 });
 
 const buttonTextTypeStyle = StyleSheet.create({
-  regular: {},
+  regular: { fontWeight: '800' },
   outline: {
-    color: '#ec2D01',
+    color: 'black',
   },
   transparent: {
     color: 'black',
