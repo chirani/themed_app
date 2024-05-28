@@ -9,8 +9,8 @@ interface CustomTextProps extends RNTextProps {
   size?: 'h1' | 'h2' | 'h3' | 'normal' | 'small';
 }
 const Text: React.FC<CustomTextProps> = (props) => {
-  let fontSize;
-  let fontWeight: TextStyle['fontWeight'] = 'normal'; // Default font weight
+  let fontSize: number;
+  let fontWeight: TextStyle['fontWeight'] = 'normal';
 
   switch (props.size) {
     case 'small':
